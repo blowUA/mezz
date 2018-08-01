@@ -1,0 +1,19 @@
+{% extends "pages/richtextpage.html" %}
+
+{% block main %}
+<!--
+This template is provided as a custom template for the homepage, for
+when it is configured as an editable page in the navigation tree. Feel
+free to modify it.
+-->
+    <ul class="style-Fourteen fixed-top">
+  <li class="current"><a href="#">Главная</a></li>
+  <li><a href="#"></a></li>
+  <li><a href="#">Blog</a></li>
+  <li><a href="#">Реестр сортов конопли</a></li>
+    <li><a href="#">Наука и конопля</a></li>
+    <li><a href="#">Культура и история</a></li>
+  <li><a href="#">Курительная утварь</a></li>
+  <li><a href="#">Контакты</a></li>
+{{ block.super }}
+{% endblock %}

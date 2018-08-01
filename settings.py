@@ -80,6 +80,10 @@ from __future__ import absolute_import, unicode_literals
 USE_SOUTH = True
 
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '*fzw3%nrdz+zezlo)njyb%wf*&7928zmtlft$i&+xszq8+72x@'
+
+
 ########################
 # MAIN DJANGO SETTINGS #
 ########################
@@ -94,43 +98,44 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', '192.168.1.107', '127.0.0.1']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # On Unix systems, a value of None will cause Django to use the same
 # timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
+# If running in Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = None
+TIME_ZONE = 'Europe/Kiev'
+
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = "ru"
 
 # Supported languages
 _ = lambda s: s
 LANGUAGES = (
-    ('en', _('English')),
+    ('ru', _('Russian')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = False
+DEBUG = True
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-SITE_ID = 1
+SITE_ID = 3
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -159,17 +164,17 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "mezza",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "ig",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "1",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        "HOST": "localhost",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        "PORT": "5432",
     }
 }
 
@@ -199,7 +204,7 @@ STATIC_URL = "/static/"
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"), 'static')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -258,9 +263,11 @@ TEMPLATES = [
 ################
 
 INSTALLED_APPS = (
-    "flat",
+    'ada',
+    #"bazel",
+   # "flat",
     #"moderna",
-    #"nova",
+   # "nova",
     #"solid",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -279,9 +286,11 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    #"mezzanine.accounts",
+    #"mezzanine.accounts",---
     #"mezzanine.mobile",
 )
+
+
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the

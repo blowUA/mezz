@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+
+{% ifinstalled mezzanine.blog %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+{% endifinstalled %}
+
+
+{% compress css %}
+
+<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+
+
+
+
+      <!-- FAVICON -->
+      <link rel="shortcut icon" href="{% static  'assets/images/favicon.png' %}">
+
+      <!-- CSS:: FONTS -->
+      <link href="//fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+      <!-- CSS:: MAIN -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+
+
+   
+
+
+
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/rtl.css" %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+ <!--[if lt IE 9]>
+    <script src="{% static "js/html5shiv.js" %}"></script>
+    <script src="{% static "js/respond.min.js" %}"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{%  static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png' %}">
+
+
+
+{% compress js %}
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/bootstrap-extras.js" %}"></script>
+{% block extra_js %}{% endblock %}
+{% include "includes/footer_scripts.html" %}
+{% endcompress %}
+
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+{% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}body{% endblock %}">
+
+
+
+
+      <div class="b-main_menu-wrapper hidden-lg-up">
+        <ul class="mobile-top">
+            <li class="search">
+                <div class="search-holder-mobile">
+                    <input type="text" name="search-mobile" value="" placeholder="Search" class="form-control">
+                    <a class="fa fa-search"></a>
+                </div>
+            </li>
+        </ul>
+        <ul class="categories">
+
+
+            <li>
+                {% page_menu "pages/menus/dropdown.html" %}
+            </li>
+
+            <li>
+                <a href="my-account.html"><span class="top">Мой аккаунт</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="top">wishlist</span></a>
+            </li>
+            <li>
+                <a href="my-account.html"><span class="top">Войти</span></a>
+            </li>
+        </ul>
+      </div>
+      <div class="b-wrapper">
+          <header id="b-header">
+              <div class="b-header b-header_main">
+                <div class="container">
+                  <div class="clearfix row">
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-12 col-xs-12 hidden-sm-down hidden-md-down">
+                      <div class="b-header_nav">
+                        <div class="b-menu_top_bar_container">
+                            <div class="b-main_menu menu-stay-left">
+                                <ul class="categories pl-0 mb-0 list-unstyled">
+                                    <!-- Mega menu -->
+                                    <!-- Top level items -->
+                                    <li class=" b-has_sub b-dropdown_wrapper from-bottom">
+                                        <a href="index.html" class=" description ">
+                                        <span class="top">Главная</span><i class="fa fa-angle-down"></i></a>
+
+
+                                    <li class="b-has_sub b-dropdown_wrapper from-bottom">
+                                        <a href="product-single.html"><span class="top">БЛОГ</span><i class="fa fa-angle-down"></i></a>
+                                        <!-- Sub Menu items -->
+                                        <div class="b-dropdown_content sub-holder b-dropdown_left glyphicon-arrow-down hidden">
+                                            <div class="dropdown-inner">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12">
+                                                        <div class="menu-item">
+                                                            <!-- CATEGORIES CONTENT -->
+                                                            <div class="categories">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12 hover-menu">
+                                                                        <ul>
+                                                                            <li><a href="blog-default.html" class="text-uppercase">Blog Default</a></li>
+                                                                            <li><a href="blog-masonry.html" class="text-uppercase">Blog Masonry</a></li>
+                                                                            <li><a href="blog-fullwidth.html" class="text-uppercase">Blog Fullwidth</a></li>
+                                                                            <li><a href="blog-three-columns.html" class="text-uppercase">Blog 3 Column</a></li>
+                                                                            <li><a href="blog-four-columns.html" class="text-uppercase">Blog 4 Column</a></li>
+                                                                            <li><a href="blog-alternative.html" class="text-uppercase">Blog Alternative</a></li>
+                                                                            <li><a href="blog-single.html" class="text-uppercase">Blog Single Post</a></li>
+                                                                            <li><a href="#" class="text-uppercase">Blog RTL</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- row -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- Top level items -->
+                                    <li class="b-has_sub b-dropdown_wrapper from-bottom">
+                                        <a href="product-single.html"><span class="top">КУЛЬТУРА</span><i class="fa fa-angle-down"></i></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-4 col-xs-6">
+                      <div class="b-logo text-sm-left text-lg-center text-xl-center">
+                        <a href="index.html" class="d-inline-block"><img src="{% static 'assets/images/logo.png' %}" class="img-fluid d-block" alt=""></a>
+                      </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-mb-4 col-sm-8 col-xs-6">
+                      <div class="b-header_right">
+                        <div class="b-header_links hidden-sm-down">
+                          <ul class="pl-0 mb-0 list-unstyled">
+                              <li>
+                                <a href="my-account.html">Войти / Регистрация</a>
+                              </li>
+                          </ul>
+                        </div>
+                        <div class="b-search_icon hidden-sm-down">
+                          <a href="javascript:;" id="b-search_toggle" class="d-inline-block">
+                            <i class="icon-magnifier icons"></i>
+                          </a>
+                        </div>
+                        <div class="b-wishlist_icon">
+                          <a href="wishlist.html" class="d-inline-block">
+                            <i class="icon-heart icons"></i>
+                            <span>3</span>
+                          </a>
+                        </div>
+                        <div class="b-cart_basket pr-0">
+                          <a href="javascript:void(0);" id="b-mini_cart" class="d-inline-block">
+                            <i class="icon-basket icons"></i>
+                            <span class="b-cart_totals">
+                              <span class="b-cart_number">3</span>
+                              <span class="b-subtotal_divider">/</span>
+                              <span class="b-cart_subtotal">
+                                <span class="b-cart_amount amount">
+                                  <span class="b-cart_currency">£</span>100.00
+                                </span>
+                              </span>
+                            </span>
+                          </a>
+                        </div>
+                        <div class="hidden-lg-up">
+                          <i class="icon-menu icons b-nav_icon" id="b-nav_icon"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </header>
+          <div class="b-page_title b-page_title_default text-center">
+            <h1 class="b-entry_title"><span>У КРАЯ </span></h1>
+            <div class="b-breadcrumbs">
+              <a href="index.html">Главная</a>
+              <span></span>
+            </div>
+          </div>
+          <section id="b-blog_fullwidth">
+              <div class="container">
+                <div class="row clearfix">
+                  <div class="col-xl-12 col-lg-12 col-mb-12 col-sm-12 col-xs-12">
+                    <div class="b-blog_default b-blog_grid b-blog_default_list b-blog_full">
+                      <div class="b-blog_degault_single">
+                         <div class="b-blog_single_info text-center">
+                              <div class="b-blog_single_header">
+                                <div class="b-post_categories mb-2 d-relative">
+                                   <div class="b-post_categorie_list">
+                                      <a href="#" rel="category tag">За последней чертой</a>
+                                   </div>
+                                </div>
+                              </div>
+                              <h3 class="b-entry_title">
+                                  <a href="#" rel="bookmark">Mein Kaif. х0</a>
+                              </h3>
+                              <div class="b-author_info pb-1">
+                                  <span class="b-author_name">
+                                      By <a href="#" rel="author">V. Harrison</a>
+                                  </span>
+                                  <span class="b-reply">
+                                      <a href="#">Оставить комментарий</a>
+                                  </span>
+                              </div>
+                         </div>
+                         <div class="b-blog_single_header">
+                              <div class="b-blog_img_wrap">
+                                  <a href="#">
+                                      <img src="{% static 'assets/images/blog/home/blog_default_01.jpg' %}" class="img-fluid" alt="">
+                                  </a>
+                              </div>
+                              <div class="b-post_time text-center">
+                                  <span class="b-post_day">08</span>
+                                  <span class="b-post_month">Aug</span>
+                              </div>
+                          </div>
+                          <div class="b-blog_single_info">
+                              <div class="b-blog_single_content text-center pt-3">
+                                  <p>Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue ullamcorper suspendisse a penatibus a varius. Montes a platea viva mus ridiculus consequat parturient parturient pretium nascetur at cras porta parturient scelerisque ad mollis at in vivamus risus. Euismod maecenas.</p>
+                              </div>
+                          </div>
+                          <div class="b-read_more text-center">
+                              <a href="#">Читать больше</a>
+                          </div>
+                          <div class="b-blog_social">
+                            <ul class="list-unstyled clearfix mb-0">
+                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                          </div>
+                      </div>
+                      <div class="b-blog_degault_single">
+                         <div class="b-blog_single_info text-center">
+                              <div class="b-blog_single_header">
+                                <div class="b-post_categories mb-2 d-relative">
+                                   <div class="b-post_categorie_list">
+                                      <a href="#" rel="category tag">Lifestyle</a>,
+                                      <a href="#" rel="category tag">Travel</a>
+                                   </div>
+                                </div>
+                              </div>
+                              <h3 class="b-entry_title">
+                                  <a href="#" rel="bookmark">Non vestibulum lacus sociosqu hac</a>
+                              </h3>
+                              <div class="b-author_info pb-1">
+                                  <span class="b-author_name">
+                                      By <a href="#" rel="author">V. Harrison</a>
+                                  </span>
+                                  <span class="b-reply">
+                                      <a href="#">Leave a comment</a>
+                                  </span>
+                              </div>
+                         </div>
+                         <div class="b-blog_single_header">
+                              <div class="b-blog_img_wrap">
+                                  <a href="#">
+                                      <img src="{% static 'assets/images/blog/home/blog_default_02.jpg' %}" class="img-fluid" alt="">
+                                  </a>
+                              </div>
+                              <div class="b-post_time text-center">
+                                  <span class="b-post_day">24</span>
+                                  <span class="b-post_month">May</span>
+                              </div>
+                          </div>
+                          <div class="b-blog_single_info">
+                              <div class="b-blog_single_content text-center pt-3">
+                                  <p>Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue ullamcorper suspendisse a penatibus a varius. Montes a platea viva mus ridiculus consequat parturient parturient pretium nascetur at cras porta parturient scelerisque ad mollis at in vivamus risus. Euismod maecenas.</p>
+                              </div>
+                          </div>
+                          <div class="b-read_more text-center pt-3">
+                              <a href="#">Read More</a>
+                          </div>
+                          <div class="b-blog_social">
+                            <ul class="list-unstyled clearfix mb-0">
+                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                          </div>
+                      </div>
+                      <div class="b-blog_degault_single">
+                         <div class="b-blog_single_info text-center">
+                              <div class="b-blog_single_header">
+                                <div class="b-post_categories mb-2 d-relative">
+                                   <div class="b-post_categorie_list">
+                                      <a href="#" rel="category tag">Travel</a>
+                                   </div>
+                                </div>
+                              </div>
+                              <h3 class="b-entry_title">
+                                  <a href="#" rel="bookmark">Leo placerat ac a dis</a>
+                              </h3>
+                              <div class="b-author_info pb-1">
+                                  <span class="b-author_name">
+                                      By <a href="#" rel="author">V. Harrison</a>
+                                  </span>
+                                  <span class="b-reply">
+                                      <a href="#">Leave a comment</a>
+                                  </span>
+                              </div>
+                         </div>
+                         <div class="b-blog_single_header">
+                              <div class="b-blog_img_wrap">
+                                  <a href="#">
+                                      <img src="{% static 'assets/images/blog/home/blog_default_03.jpg' %}" class="img-fluid" alt="">
+                                  </a>
+                              </div>
+                              <div class="b-post_time text-center">
+                                  <span class="b-post_day">29</span>
+                                  <span class="b-post_month">Jun</span>
+                              </div>
+                              <div class="b-post_categories">
+                                 <div class="b-post_categorie_list">
+                                    <a href="#" rel="category tag">Lifestyle</a>
+                                 </div>
+                              </div>
+                          </div>
+                          <div class="b-blog_single_info">
+                              <div class="b-blog_single_content text-center pt-3">
+                                  <p>Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue ullamcorper suspendisse a penatibus a varius. Montes a platea viva mus ridiculus consequat parturient parturient pretium nascetur at cras porta parturient scelerisque ad mollis at in vivamus risus. Euismod maecenas.</p>
+                              </div>
+                          </div>
+                          <div class="b-read_more text-center">
+                              <a href="#">Read More</a>
+                          </div>
+                          <div class="b-blog_social">
+                            <ul class="list-unstyled clearfix mb-0">
+                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                          </div>
+                      </div>
+                      <div class="b-blog_degault_single">
+                         <div class="b-blog_single_info text-center">
+                              <div class="b-blog_single_header">
+                                <div class="b-post_categories mb-2 d-relative">
+                                   <div class="b-post_categorie_list">
+                                      <a href="#" rel="category tag">Lifestyle</a>,
+                                      <a href="#" rel="category tag">Travel</a>
+                                   </div>
+                                </div>
+                              </div>
+                              <h3 class="b-entry_title">
+                                  <a href="#" rel="bookmark">Cum fames a cras dictumst</a>
+                              </h3>
+                              <div class="b-author_info pb-1">
+                                  <span class="b-author_name">
+                                      By <a href="#" rel="author">V. Harrison</a>
+                                  </span>
+                                  <span class="b-reply">
+                                      <a href="#">Leave a comment</a>
+                                  </span>
+                              </div>
+                         </div>
+                         <div class="b-blog_single_header">
+                              <div class="b-blog_img_wrap">
+                                  <a href="#">
+                                      <img src="{% static 'assets/images/blog/home/blog_default_04.jpg' %}" class="img-fluid" alt="">
+                                  </a>
+                              </div>
+                              <div class="b-post_time text-center">
+                                  <span class="b-post_day">17</span>
+                                  <span class="b-post_month">Aug</span>
+                              </div>
+                          </div>
+                          <div class="b-blog_single_info">
+                              <div class="b-blog_single_content text-center pt-3">
+                                  <p>Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue ullamcorper suspendisse a penatibus a varius. Montes a platea viva mus ridiculus consequat parturient parturient pretium nascetur at cras porta parturient scelerisque ad mollis at in vivamus risus. Euismod maecenas.</p>
+                              </div>
+                          </div>
+                          <div class="b-read_more text-center">
+                              <a href="#">Read More</a>
+                          </div>
+                          <div class="b-blog_social">
+                            <ul class="list-unstyled clearfix mb-0">
+                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </section>
+          <footer class="b-footer_container color-scheme-light hidden -sm-down">
+              <div class="container b-main_footer">
+                  <!-- footer-main -->
+                  <aside class="row clearfix">
+                      <div class="b-footer_column col-md-12 col-sm-12">
+                          <div class="b-footer_block">
+                              <div class="b-footer_block_in">
+                                  <p class="text-center mb-0"><img src="{% static 'assets/images/logo-white.png' %}" class="d-block m-auto img-fluid" alt="" title=""></p>
+                                  <ul class="b-social-icons text-center">
+                                      <li class="b-social_facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i>Facebook</a></li>
+                                      <li class="b-social_twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                      <li class="b-social_google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i>Google</a></li>
+                                      <li class="b-social_email"><a href="#" target="_blank"><i class="fa fa-envelope"></i>Email</a></li>
+                                      <li class="b-social_pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i>Pinterest</a></li>
+                                  </ul>
+                                  <br>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="b-footer_column col-lg-2 col-md-3 col-sm-6 mb-4">
+                          <div class="b-footer_block">
+                              <h5 class="b-footer_block_title">Our Stores</h5>
+                              <div class="b-footer_block_in">
+                                  <ul class="b-footer_menu">
+                                      <li><a href="#">New York</a></li>
+                                      <li><a href="#">London SF</a></li>
+                                      <li><a href="#">Cockfosters BP</a></li>
+                                      <li><a href="#">Los Angeles</a></li>
+                                      <li><a href="#">Chicago</a></li>
+                                      <li><a href="#">Las Vegas</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="b-footer_column col-lg-2 col-md-3 col-sm-6 mb-4">
+                          <div class="b-footer_block">
+                              <h5 class="b-footer_block_title">Information</h5>
+                              <div class="b-footer_block_in">
+                                  <ul class="b-footer_menu">
+                                      <li><a href="#">About Store</a></li>
+                                      <li><a href="#">New Collection</a></li>
+                                      <li><a href="#">Woman Dress</a></li>
+                                      <li><a href="contact-01.html">Contact Us</a></li>
+                                      <li><a href="#">Latest News</a></li>
+                                      <li><a href="#">Our Sitemap</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="b-footer_column col-lg-2 col-md-3 col-sm-6 mb-4">
+                          <div class="b-footer_block">
+                              <h5 class="b-footer_block_title">Useful links</h5>
+                              <div class="b-footer_block_in">
+                                  <ul class="b-footer_menu">
+                                      <li><a href="#">Privacy Policy</a></li>
+                                      <li><a href="#">Returns</a></li>
+                                      <li><a href="#">Terms &amp; Conditions</a></li>
+                                      <li><a href="contact-01.html">Contact Us</a></li>
+                                      <li><a href="#">Latest News</a></li>
+                                      <li><a href="#">Our Sitemap</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="b-footer_column col-lg-2 col-md-3 col-sm-6 mb-4 mb-4">
+                          <div class="b-footer_block">
+                              <h5 class="b-footer_block_title">Footer Menu</h5>
+                              <div class="b-footer_block_in">
+                                  <ul class="b-footer_menu">
+                                      <li><a href="#">Instagram profile</a></li>
+                                      <li><a href="#">New Collection</a></li>
+                                      <li><a href="#">Woman Dress</a></li>
+                                      <li><a href="contact-01.html">Contact Us</a></li>
+                                      <li><a href="#">Latest News</a></li>
+                                      <li><a href="#" target="_blank">Purchase Theme</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="b-footer_column col-lg-4 col-md-12 col-sm-12 mb-4">
+                          <div class="b-footer_block">
+                              <h5 class="b-footer_block_title">About The Store</h5>
+                              <div class="b-footer_block_in">
+                                  <p>STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</p>
+                                  <div class="b-contact_info">
+                                      <i class="fa fa-location-arrow d-inline-block"></i> 451 Wall Street, USA, New York
+                                      <br>
+                                      <i class="fa fa-mobile d-inline-block"></i> Phone: (064) 332-1233
+                                      <br>
+                                  </div>
+                                  <br>
+                                  <p><img src="{% static 'assets/images/payments.png' %}" alt=""></p>
+                              </div>
+                          </div>
+                      </div>
+                  </aside>
+                  <!-- footer-main -->
+              </div>
+              <!-- footer-bar -->
+              <div class="b-copyrights_wrapper">
+                  <div class="container">
+                      <div class="d-footer_bar">
+                          <div class="text-center">
+                              <i class="fa fa-copyright"></i> 2018 Created by
+                              <a href="#" class="text-white">
+                                 jThemes Studio
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- footer-bar -->
+          </footer>
+          <a href="javascript:;" id="b-scrollToTop" class="b-scrollToTop">
+            <span class="basel-tooltip-label">Scroll To Top</span>Scroll To Top
+          </a>
+          <div class="b-search_popup">
+            <form role="search" method="get" id="searchform" class="searchform  basel-ajax-search" action="#" data-thumbnail="1" data-price="1" data-count="3">
+              <div>
+                <label class="screen-reader-text" for="s"></label>
+                <input type="text" placeholder="Search for products" value="" name="s" id="s" autocomplete="off">
+                <input type="hidden" name="post_type" id="post_type" value="product">
+                <button type="submit" class="b-searchsubmit" id="b-searchsubmit">Search</button>
+              </div>
+            </form>
+            <span class="b-close_search" id="b-close_search">close</span>
+          </div>
+      </div>
+{% nevercache %}
+{% if messages %}
+<div class="messages">
+{% for message in messages %}
+<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endnevercache %}
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+ 
+   
+    
+    
+
+    <!-- JQUERY:: JQUERY.JS -->
+      <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+      <!-- JQUERY:: BOOTSTRAP.JS -->
+      <script src="{% static 'assets/js/tether.min.js' %}"></script>
+      <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+      <!-- JQUERY:: ZOOM SLIDER.JS -->
+      <script src="{% static 'assets/js/plugins/lightbox/simple-lightbox.min.js' %}"></script>
+
+      <!-- JQUERY:: ISOTOPE.JS -->
+      <script src="{% static 'assets/js/plugins/isotop/isotope.min.js' %}"></script>
+      <script src="{% static 'assets/js/plugins/isotop/imagesloaded.min.js' %}"></script>
+
+      <!-- JQUERY:: CUSTOM.JS -->
+      <script src="{% static 'assets/js/custom.js' %}"></script></body>
+</html>
