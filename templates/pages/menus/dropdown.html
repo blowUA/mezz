@@ -2,7 +2,7 @@
 {% spaceless %}
 {% if page_branch_in_menu %}
 
-{% if branch_level == 0 %}
+{% if branch_level == 1 %}
 <ul class="nav navbar-nav">
     {% for page in page_branch %}
     {% if not has_home and page.is_primary and forloop.first %}

@@ -15,14 +15,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
         <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
     {% endifinstalled %}
-
-    {% compress css %}
-
-    <!-- Fonts -->
+     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600" rel="stylesheet">
-
-    <!-- Vendor Styles -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.css">
+    {% compress css %}
+        <!-- Vendor Styles -->
 
     <link href="{% static  'css/ionicons.min.css' %}" rel="stylesheet">
     <link href="{% static  'css/animate.css' %}" rel="stylesheet">
@@ -39,10 +37,7 @@
 
 
         <!-- Vendor Styles -->
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.css">
         <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-        <link href="{% static 'css/animate.css' %}" rel="stylesheet">
         <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
 
         <!-- Theme Styles -->
@@ -84,13 +79,12 @@
 <script src="{% static "js/html5shiv.js" %}"></script>
 <script src="{% static "js/respond.min.js" %}"></script>
 <![endif]-->
-<script>
-$('.parallax-window').parallax({imageSrc: '/ada/static/img/kb.jpg'});
-</script>
+
     {% block extra_head %}{% endblock %}
+<script src="{% static "css/normalize.css" %}"></script>
 </head>
 
-<body id="{% block body_id %}body{% endblock %}" style:(background-color: #000;)>
+<body id="{% block body_id %}body{% endblock %}">
 
 <header class="navbar-dark navbar-fixed-top">
 		<div class="navbar-inner">
@@ -119,20 +113,21 @@ $('.parallax-window').parallax({imageSrc: '/ada/static/img/kb.jpg'});
 		</div>
 	</header>
 {% block all_content %}
-<div class="container">
+
+<div class="container-fluid">
 <div class="row">
 
-<div class="col-md-2 left">
+<div class="container-fluid col-md-2 left">
     {% block left_panel %}
     <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
     {% endblock %}
 </div>
 
-<div class="col-md-7 middle">
+<div class="container-fluid col-md-7 middle">
     {% block main %}{% endblock %}
 </div>
 
-<div class="col-md-3 right">
+<div class="container-fluid col-md-3 right">
     {% nevercache %}
     {% include "includes/language_selector.html" %}
     {% include "includes/user_panel.html" %}
@@ -157,7 +152,7 @@ $('.parallax-window').parallax({imageSrc: '/ada/static/img/kb.jpg'});
 
             <p class="site-info text-center">
                 {% trans "Powered by" %}
-                <a>BG Brothers LTD</a>{% ifinstalled cartridge.shop %},
+                <a>BG Brothers LTD, 2010-2018</a>{% ifinstalled cartridge.shop %},
                 <a href="//blowgrow.com.ua">BlowGrow</a>{% endifinstalled %}
 
 </footer>
@@ -170,10 +165,9 @@ $('.parallax-window').parallax({imageSrc: '/ada/static/img/kb.jpg'});
     <script src="{% static 'js/owl.carousel.js' %}"></script>
     <script src="{% static 'js/smoothScroll.js' %}"></script>
     <script src="{% static 'js/wow.min.js' %}"></script>
-   <script src="js/slippry.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/parallax.js"></script>
+   <script src="{% static 'js/slippry.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
 
 
     <!-- Page specific scripts -->

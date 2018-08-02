@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f547d9c4-1dd3-45e0-82d1-a95c6fd0fbbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ada/static/css/menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flat/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/flat/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flat/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flat/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/moderna/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/moderna/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/nova/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/templates/pages/menus/dropdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/nova/templates/pages/menus/dropdown.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nova/templates/pages/menus/primary.html" beforeDir="false" afterPath="$PROJECT_DIR$/nova/templates/pages/menus/primary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ada/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ada/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ada/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/menus/dropdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/menus/dropdown.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,41 +23,42 @@
     <session id="-422396001">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="5" />
-          <entry key="html" value="58" />
-          <entry key="py" value="7" />
+          <entry key="html" value="63" />
+          <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="58" />
-          <entry key="Python" value="7" />
+          <entry key="HTML" value="63" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="49" />
-          <entry key="html" value="1874" />
-          <entry key="py" value="173" />
+          <entry key="html" value="2368" />
+          <entry key="py" value="246" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="49" />
-          <entry key="HTML" value="1861" />
-          <entry key="Python" value="173" />
-          <entry key="SQL" value="13" />
+          <entry key="HTML" value="2349" />
+          <entry key="Python" value="246" />
+          <entry key="SQL" value="19" />
         </counts>
       </usages-collector>
     </session>
@@ -66,10 +66,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.py">
+        <entry file="file://$PROJECT_DIR$/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
+            <state relative-caret-position="261">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ada/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="96" column="12" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="25" />
+            <state relative-caret-position="357">
+              <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -91,14 +94,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="172" column="32" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
+            <state relative-caret-position="240">
+              <caret line="149" column="18" lean-forward="true" selection-start-line="149" selection-start-column="18" selection-end-line="149" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pages/page.html">
+        <entry file="file://$PROJECT_DIR$/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5162">
+              <caret line="288" column="2" selection-start-line="288" selection-start-column="2" selection-end-line="288" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ada/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="30" column="14" lean-forward="true" selection-start-line="13" selection-end-line="33" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -114,7 +135,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
+            <state relative-caret-position="232">
               <caret line="8" column="6" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="41" />
             </state>
           </provider>
@@ -126,6 +147,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -137,6 +159,7 @@
       <find>Юридическая консультацмия</find>
       <find>panel</find>
       <find>allowe</find>
+      <find>menu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,9 +185,12 @@
         <option value="$PROJECT_DIR$/ada/static/css/menu.css" />
         <option value="$PROJECT_DIR$/ada/templates/pages/index.html" />
         <option value="$PROJECT_DIR$/ada/templates/pages/menus/dropdown.html" />
-        <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/ada/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/pages/index.html" />
+        <option value="$PROJECT_DIR$/ada/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/pages/menus/dropdown.html" />
+        <option value="$PROJECT_DIR$/ada/templates/home.html" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/urls.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
@@ -190,16 +216,18 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="476" />
-    <option name="y" value="167" />
-    <option name="width" value="1142" />
-    <option name="height" value="715" />
+    <option name="x" value="708" />
+    <option name="y" value="185" />
+    <option name="width" value="1317" />
+    <option name="height" value="905" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,59 +244,50 @@
               <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
               <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
               <item name="ada" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
               <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
               <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="generic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="generic" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="django_private_chat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
               <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mezzanine-themes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mezzanine-themes" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="menus" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -282,7 +301,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.home.html">
+    <configuration name="home.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mezzanine-themes/ada/templates/home.html">
+      <method v="2" />
+    </configuration>
     <configuration name="mezzanine-themes" type="Python.DjangoServer" factoryName="Django server">
       <module name="mezzanine-themes" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -306,6 +328,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.mezzanine-themes" />
+      <item itemvalue="JavaScript Debug.home.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.home.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -321,23 +352,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="476" y="167" width="1142" height="715" extended-state="0" />
+    <frame x="708" y="185" width="1317" height="905" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982639" visible="true" weight="0.19525547" />
-      <window_info id="Structure" order="1" sideWeight="0.5017361" side_tool="true" weight="0.0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49036402" visible="true" weight="0.10542879" />
+      <window_info id="Structure" order="1" sideWeight="0.509636" side_tool="true" visible="true" weight="0.10542879" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4996066" weight="0.3989704" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32879046" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003934" side_tool="true" visible="true" weight="0.3989704" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49543795" weight="0.32947233" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -374,6 +405,20 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/urls.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bazel/models.py">
@@ -530,9 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7511">
           <caret line="259" column="39" selection-start-line="259" selection-start-column="39" selection-end-line="259" selection-end-column="39" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -547,9 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="116" selection-start-line="116" selection-end-line="116" />
-          <folding>
-            <element signature="n#div#1;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -566,9 +605,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ada/templates/includes/editable_loader.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ada/templates/includes/language_selector.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ada/templates/includes/user_panel.html">
@@ -590,9 +626,6 @@
         <state relative-caret-position="-174" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ada/templates/pages/menus/dropdown.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -600,24 +633,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/page.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ada/templates/includes/language_selector.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/menu.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/page.html">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/menus/primary.html">
@@ -627,17 +652,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ada/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="96" column="12" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="25" />
+        <state relative-caret-position="357">
+          <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/menus/dropdown.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/django_private_chat/dialogs.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5162">
+          <caret line="288" column="2" selection-start-line="288" selection-start-column="2" selection-end-line="288" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ada/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="13" selection-end-line="33" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="172" column="32" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
+        <state relative-caret-position="240">
+          <caret line="149" column="18" lean-forward="true" selection-start-line="149" selection-start-column="18" selection-end-line="149" selection-end-column="18" />
         </state>
       </provider>
     </entry>

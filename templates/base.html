@@ -3,210 +3,246 @@
 {% load pages_tags mezzanine_tags i18n staticfiles %}
 
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
-<meta name="description" content="{% block meta_description %}{% endblock %}">
-<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>
+        {% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 
-{% ifinstalled mezzanine.blog %}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
-<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-{% endifinstalled %}
+    {% ifinstalled mezzanine.blog %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+    {% endifinstalled %}
 
-{% compress css %}
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-<!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600" rel="stylesheet">
+    {% compress css %}
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600" rel="stylesheet">
 
-    <!-- Vendor Styles -->
+        <!-- Vendor Styles -->
 
-    <link href="{% static  'css/ionicons.min.css' %}" rel="stylesheet">
-    <link href="{% static  'css/animate.css' %}" rel="stylesheet">
-    <link href="{% static  'css/slippry.css' %}" rel="stylesheet">
-      <link href="{% static  'css/menu.css' %}" rel="stylesheet">
+        <link href="{% static  'css/ionicons.min.css' %}" rel="stylesheet">
+        <link href="{% static  'css/animate.css' %}" rel="stylesheet">
+        <link href="{% static  'css/slippry.css' %}" rel="stylesheet">
+        <link href="{% static  'css/menu.css' %}" rel="stylesheet">
 
-    <!-- Theme Styles -->
-    <link href="{% static  'css/libre.css' %}" rel="stylesheet">
-    <link href="{% static  'css/libre-themes.css' %}" rel="stylesheet">
-    <link href="{% static  'css/custom.css' %}" rel="stylesheet">
+        <!-- Theme Styles -->
+        <link href="{% static  'css/libre.css' %}" rel="stylesheet">
+        <link href="{% static  'css/libre-themes.css' %}" rel="stylesheet">
+        <link href="{% static  'css/custom.css' %}" rel="stylesheet">
 
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
-{% endif %}
-{% ifinstalled cartridge.shop %}
-<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
-{% endif %}
-{% endifinstalled %}
-{% block extra_css %}
+        {% if LANGUAGE_BIDI %}
+            <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
+        {% endif %}
+        {% ifinstalled cartridge.shop %}
+            <link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+            {% if LANGUAGE_BIDI %}
+                <link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+            {% endif %}
+        {% endifinstalled %}
+        {% block extra_css %}
+        {% endblock %}
+    {% endcompress %}
 
-{% endblock %}
-{% endcompress %}
-
-{% compress js %}
-<!--script src="{# % static "mezzanine/js/"|add:settings.JQUERY_FILENAME % #}"></script-->
+    {% compress js %}
+        <!--script src="{# % static "mezzanine/js/"|add:settings.JQUERY_FILENAME % #}"></script-->
 
 
-{% block extra_js %}{% endblock %}
-{% endcompress %}
+        {% block extra_js %}{% endblock extra_js %}
+    {% endcompress %}
 
-<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 <script src="{% static "js/html5shiv.js" %}"></script>
 <script src="{% static "js/respond.min.js" %}"></script>
 <![endif]-->
 
-{% block extra_head %}{% endblock %}
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-<div class="container">
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">{% trans "Toggle Navigation" %}</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    {% block navbar_title %}
-    {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-    {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-    {% endblock%}
-</div>
-<div class="navbar-collapse collapse">
-    {% block navbar_search_form %}{% search_form "all" %}{% endblock %}
-    {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
-</div>
-</div>
-</div>
-
-<div class="container">
-
-{% nevercache %}
-{% if messages %}
-<div class="messages">
-{% for message in messages %}
-<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    {{ message }}
-</div>
-{% endfor %}
-</div>
+{% if pages %}
+    <h3>Sub Categories</h3>
+    {% for i in pages %}
+        <a href="{{ i.slug }}"> {{ i.name }} </a>
+    {% endfor %}
 {% endif %}
-{% endnevercache %}
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {% block navbar_title %}
+                {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+                {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>
+                {% endif %}
+            {% endblock %}
+        </div>
+        <ul class="style-Fourteen fixed-top">
+            <li class="current"><a href="#">Главная</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Реестр сортов конопли</a></li>
+            <li><a href="#">Наука и конопля</a></li>
+            <li><a href="#">Культура и история</a></li>
+            <li><a href="#">Курительная утварь</a></li>
+            <li><a href="#">Контакты</a></li>
 
-<h1>{% block title %}{% endblock %}</h1>
+        </ul>
+    </div>
+</div>
 
-<ul class="breadcrumb">
-{% spaceless %}
-{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-{% endspaceless %}
-</ul>
+<div class="container-fluid">
+
+    {% nevercache %}
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endnevercache %}
+
+    <h1>{% block title %}{% endblock %}</h1>
+
+    <ul class="breadcrumb">
+        {% spaceless %}
+            {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+        {% endspaceless %}
+    </ul>
 
 </div>
 
-<div class="container">
-<div class="row">
+<div class="container-fluid pt-3 mt-2">
+    <div class="row">
 
-<div class="col-md-2 left">
-    {% block left_panel %}
-    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
+        <div class="container-fluid col-md-2 left">
+            {% block left_panel %}
+<table class="table table-bordered table-dark table-inverse">
+    <thead class="thead-inverse">
+    <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td scope="row">2</td>
+        <td>a</td>
+        <td>b</td>
+    </tr>
+    <tr>
+        <td scope="row">3</td>
+        <td>c</td>
+        <td>d</td>
+    </tr>
+    </tbody>
+</table>
 
-<div class="col-md-7 middle">
+
+            {% endblock %}
+        </div>
+
+        <div class="container-fluid container-fluid col-md-4 middle">
     {% block main %}{% endblock %}
 </div>
-
-<div class="col-md-3 right">
-    {% nevercache %}
-    {% include "includes/language_selector.html" %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-    <div class="panel panel-default">
-    <div class="panel-body">
+        <div class="container-fluid container-fluid col-md-4 middle">
+    {% include 'django_private_chat/dialogs.html' %}
+</div>
+        <div class="col-md-3 right">
+            {% nevercache %}
+                {% include "includes/language_selector.html" %}
+                {% include "includes/user_panel.html" %}
+            {% endnevercache %}
+            <div class="panel panel-default">
+                <div class="panel-body">
     {% block right_panel %}
     {% ifinstalled mezzanine.twitter %}
     {% include "twitter/tweets.html" %}
     {% endifinstalled %}
     {% endblock %}
     </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-</div>
-</div>
-
 <footer>
-<div class="container">
-{% page_menu "pages/menus/footer.html" %}
+    <div class="container">
+        {% page_menu "pages/menus/footer.html" %}
 
-<div class="row">
-<p class="site-info text-center">
-    {% trans "Powered by" %}
-    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-    {% trans "and" %}
-    <a href="http://www.djangoproject.com">Django</a>
-    <span class="separator">|</span>
-    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
-    {% ifinstalled mezzanine.mobile %}
-    <span class="separator">|</span>
-    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-    {% endifinstalled %}
-</p>
-</div>
-</div>
+        <div class="row">
+            <p class="site-info text-center">
+                {% trans "Powered by" %}
+                <a href="https://blowgrow.com.ua">BG Brothers Group LTD</a>{% ifinstalled cartridge.shop %},
+                <a href="http://семена-конопли.укр">since 2010-2018</a>{% endifinstalled %}
+                <span class="separator">|</span>
+                {% trans "Theme by" %} <a target="_blank" href="http://blowgrow.com.ua">BlowGrow</a>
+            </p>
+        </div>
+    </div>
 </footer>
 
 {% block footer_js %}
-        <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+    <script src="{% static "js/jquery-3.3.1.js" %}"></script>
     <script src="{% static "js/popper.min.js" %}"></script>
-<script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/bootstrap-extras.js" %}"></script>
-    <script src="{% static 'js/parallax.js' %}"></script>
+    <script src="{% static 'js/parallax.min.js' %}"></script>
     <script src="{% static  'js/slippry.min.js' %}"></script>
-    <script src="{% static  'js/main.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/smoothScroll.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/slippry.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 
 
     <!-- Page specific scripts -->
     <script>
 
-      var slider;
+        var slider;
 
-      $(function(){
-        slider = $('#intro-slider').slippry({
-          // General elements & wrapper
-          slippryWrapper: '<div class="sy-box intro-slider" />',
+        $(function () {
+            slider = $('#intro-slider').slippry({
+                // General elements & wrapper
+                slippryWrapper: '<div class="sy-box intro-slider" />',
 
-          // Options
-          auto: true,
-          autoHover: false,
-          loop: true,
-          captionsSrc: 'li',
-          captions: 'custom',
-          captionsEl: '.slider-caption',
-          controls: false,
+                // Options
+                auto: true,
+                autoHover: false,
+                loop: true,
+                captionsSrc: 'li',
+                captions: 'custom',
+                captionsEl: '.slider-caption',
+                controls: false,
 
-          // Transitions
-          transition: 'kenburns', // fade, horizontal, kenburns, false
-          continuous: true,
-          speed: 5500,
+                // Transitions
+                transition: 'kenburns', // fade, horizontal, kenburns, false
+                continuous: true,
+                speed: 5500,
 
-          // Events
-          onSlideBefore: function (slide, old_index, new_index) {
-            onSlideBefore(slide, old_index, new_index);
-            return this;
-          }
+                // Events
+                onSlideBefore: function (slide, old_index, new_index) {
+                    onSlideBefore(slide, old_index, new_index);
+                    return this;
+                }
+            });
         });
-      });
     </script>
 
     <!-- Themeswitcher - REMOVE THIS LINE -->
@@ -228,7 +264,7 @@
     <!-- Theme Scripts -->
     <script src="{% static 'js/main.js' %}"></script>
 
-{% include "includes/footer_scripts.html" %}
+    {% include "includes/footer_scripts.html" %}
 {% endblock %}
 
 </body>

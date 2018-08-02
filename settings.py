@@ -98,7 +98,7 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['*', '192.168.1.107', '127.0.0.1']
+ALLOWED_HOSTS = ['*', '192.168.1.107', '127.0.0.1', 'localhost']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -263,7 +263,7 @@ TEMPLATES = [
 ################
 
 INSTALLED_APPS = (
-    'ada',
+    #'ada',
     #"bazel",
    # "flat",
     #"moderna",
@@ -286,6 +286,8 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
+ #   "django_private_chat",
+    "django_extensions",
     #"mezzanine.accounts",---
     #"mezzanine.mobile",
 )
@@ -323,6 +325,12 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 #########################
 # OPTIONAL APPLICATIONS #
 #########################
+
+# Chat settings #
+
+#CHAT_WS_SERVER_HOST = '127.0.0.1'
+#CHAT_WS_SERVER_PORT = 8000
+#CHAT_WS_SERVER_PROTOCOL = 'ws'
 
 # These will be added to ``INSTALLED_APPS``, only if available.
 OPTIONAL_APPS = (

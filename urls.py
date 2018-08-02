@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+#from django_private_chat import urls as django_private_chat_urls
 
 from mezzanine.core.views import direct_to_template
 
@@ -70,7 +71,7 @@ urlpatterns += [
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
     url("^", include("mezzanine.urls")),
-
+  #  url(r'^', include('django_private_chat.urls')),
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
     # You can also mount all of Mezzanine's urlpatterns under a
